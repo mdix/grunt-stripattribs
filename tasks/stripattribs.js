@@ -10,7 +10,7 @@
 var path = require('path');
 
 module.exports = function (grunt) {
-    grunt.registerMultiTask('stripattribs_plugin', 'Strips attributes from html-tags. Also supports regexps.', function () {
+    grunt.registerMultiTask('stripattribs', 'Strips attributes from html-tags using regexps.', function () {
         var attribNames = this.options().attribNames;
         var VERBOSE     = this.options().verbose;
 

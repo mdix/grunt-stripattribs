@@ -1,6 +1,6 @@
 /*
- * grunt-stripattribs-plugin
- * https://github.com/mdix/grunt-stripattribs-plugin
+ * grunt-stripattribs
+ * https://github.com/mdix/grunt-stripattribs
  *
  * Copyright (c) 2013 Marc Dix
  * Licensed under the MIT license.
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         clean: {
             tests: ['test/dist/*']
         },
-        stripattribs_plugin: {
+        stripattribs: {
             prod: {
                 options: {
                     attribNames: ['data-i18n', 'selected'],
@@ -46,5 +46,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['jshint', 'stripattribs_plugin']);
+    grunt.registerTask('default', ['jshint', 'stripattribs']);
 };
