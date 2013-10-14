@@ -12,7 +12,7 @@ var path = require('path');
 module.exports = function (grunt) {
     grunt.registerMultiTask('stripattribs', 'Strips attributes from html-tags using regexps.', function () {
         var attribNames = this.options().attribNames;
-        var VERBOSE     = this.options().verbose;
+        var VERBOSE     = this.options().verbose || false;
 
         this.files.forEach(function (f) {
             f.src.filter(function(filepath) {
