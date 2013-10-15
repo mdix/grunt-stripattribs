@@ -11,21 +11,21 @@ var path = require('path');
 
 module.exports = function (grunt) {
     grunt.registerMultiTask('stripattribs', 'Strips attributes from html-tags using regexps.', function () {
-        var attribNames = this.options().attribNames;
+        var attribNames = this.options().attribNames || [];
         var VERBOSE     = this.options().verbose || false;
 
-        this.files.forEach(function (f) {
-            f.src.filter(function(filepath) {
+        this.files.forEach(function (files) {
+            files.src.filter(function(filepath) {
                 if (grunt.file.isFile(filepath)) {
                     var initialFileContent  = grunt.file.read(filepath);
                     var fileContent         = initialFileContent;
 
                     // STRIP ATTRIBS
                     for (var i = 0; i < attribNames.length; i++) {
-                        var regExp       = new RegExp(attribNames[i] + '([=]{1}["]{1}[^"]*["]|)', 'g');
-                            fileContent  = fileContent.replace(regExp, '');
-                            fileContent  = fileContent.replace(/[\s]{2}/g, ' ');
-                            fileContent  = fileContent.replace(/[\s]{1}>/g, '>');
+                        var regExp  = new RegExp(attribNames[i] + '([=]{1}["]{1}[^"]*["]|)', 'g');
+                        fileContent = fileContent.replace(regExp, '');
+                        fileContent = fileContent.replace(/[\s]{2}/g, ' ');
+                        fileContent = fileContent.replace(/[\s]{1}>/g, '>');
                     }
 
                     // WRITE

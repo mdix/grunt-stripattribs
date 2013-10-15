@@ -1,9 +1,9 @@
 # grunt-stripattribs
 
-> Strips attributes from html-tags. Also supports regexps.
+> Strips attributes from html-tags using regexps.
 
 ## Getting Started
-This plugin requires Grunt `~0.4.1`
+Note: This plugin is just a quick and dirty and untested draft implementation and not intented for the daily use. This plugin requires Grunt `~0.4.1`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
